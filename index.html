@@ -1,0 +1,566 @@
+                                  <!DOCTYPE html> <html lang="fr"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>iPad mini 7 productivity</title> <style> /* Apple-inspired dark mode styling */ :root { --apple-dark-bg: #1d1d1f; --apple-darker-bg: #0a0a0a; --apple-text: #f5f5f7; --apple-secondary-text: #86868b; --apple-accent: #0071e3; --apple-highlight: #2997ff; --apple-card-bg: #2d2d30; --apple-border: #38383c; --apple-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
+                                
+                                      * {
+                                          margin: 0;
+                                          padding: 0;
+                                          box-sizing: border-box;
+                                      }
+
+                                      body {
+                                          background-color: var(--apple-dark-bg);
+                                          color: var(--apple-text);
+                                          font-family: var(--apple-font);
+                                          line-height: 1.6;
+                                          -webkit-font-smoothing: antialiased;
+                                      }
+
+                                      header {
+                                          background-color: rgba(10, 10, 10, 0.8);
+                                          padding: 1.5rem;
+                                          position: sticky;
+                                          top: 0;
+                                          backdrop-filter: blur(10px);
+                                          -webkit-backdrop-filter: blur(10px);
+                                          z-index: 100;
+                                          border-bottom: 1px solid var(--apple-border);
+                                      }
+
+                                      .container {
+                                          max-width: 1200px;
+                                          margin: 0 auto;
+                                          padding: 0 1.5rem;
+                                      }
+
+                                      .header-content {
+                                          display: flex;
+                                          justify-content: space-between;
+                                          align-items: center;
+                                      }
+
+                                      .logo {
+                                          font-size: 1.5rem;
+                                          font-weight: 600;
+                                          letter-spacing: -0.5px;
+                                      }
+
+                                      nav ul {
+                                          display: flex;
+                                          list-style: none;
+                                      }
+
+                                      nav ul li {
+                                          margin-left: 1.5rem;
+                                      }
+
+                                      nav ul li a {
+                                          color: var(--apple-secondary-text);
+                                          text-decoration: none;
+                                          transition: color 0.3s ease;
+                                          font-size: 0.9rem;
+                                          font-weight: 500;
+                                      }
+
+                                      nav ul li a:hover {
+                                          color: var(--apple-text);
+                                      }
+
+                                      main {
+                                          padding: 3rem 0;
+                                      }
+
+                                      .blog-grid {
+                                          display: grid;
+                                          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                                          gap: 2rem;
+                                          margin-top: 2rem;
+                                      }
+
+                                      .blog-card {
+                                          background-color: var(--apple-card-bg);
+                                          border-radius: 14px;
+                                          overflow: hidden;
+                                          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                                          transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                          cursor: pointer;
+                                      }
+
+                                      .blog-card:hover {
+                                          transform: translateY(-5px);
+                                          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                                      }
+
+                                      .blog-card-img {
+                                          width: 100%;
+                                          height: 200px;
+                                          object-fit: cover;
+                                      }
+
+                                      .blog-card-content {
+                                          padding: 1.5rem;
+                                      }
+
+                                      .blog-card-title {
+                                          font-size: 1.2rem;
+                                          font-weight: 600;
+                                          margin-bottom: 0.5rem;
+                                          letter-spacing: -0.5px;
+                                      }
+
+                                      .blog-card-excerpt {
+                                          color: var(--apple-secondary-text);
+                                          font-size: 0.9rem;
+                                          margin-bottom: 1rem;
+                                      }
+
+                                      .blog-card-date {
+                                          color: var(--apple-secondary-text);
+                                          font-size: 0.8rem;
+                                          display: flex;
+                                          align-items: center;
+                                      }
+
+                                      .section-title {
+                                          font-size: 2.5rem;
+                                          font-weight: 700;
+                                          letter-spacing: -1px;
+                                          margin-bottom: 1rem;
+                                          background: linear-gradient(90deg, var(--apple-text), var(--apple-secondary-text));
+                                          -webkit-background-clip: text;
+                                          -webkit-text-fill-color: transparent;
+                                      }
+
+                                      .section-subtitle {
+                                          color: var(--apple-secondary-text);
+                                          font-size: 1.1rem;
+                                          margin-bottom: 2rem;
+                                          max-width: 600px;
+                                      }
+
+                                      /* Blog post styles */
+                                      .blog-post {
+                                          display: none; /* Hidden by default */
+                                          max-width: 800px;
+                                          margin: 0 auto;
+                                      }
+
+                                      .blog-post.active {
+                                          display: block;
+                                      }
+
+                                      .blog-post-header {
+                                          margin-bottom: 2rem;
+                                      }
+
+                                      .blog-post-title {
+                                          font-size: 2.5rem;
+                                          font-weight: 700;
+                                          letter-spacing: -1px;
+                                          margin-bottom: 1rem;
+                                      }
+
+                                      .blog-post-meta {
+                                          display: flex;
+                                          color: var(--apple-secondary-text);
+                                          font-size: 0.9rem;
+                                          margin-bottom: 1rem;
+                                      }
+
+                                      .blog-post-date {
+                                          margin-right: 1rem;
+                                      }
+
+                                      .blog-post-author {
+                                          font-weight: 500;
+                                      }
+
+                                      .blog-post-img {
+                                          width: 100%;
+                                          height: 400px;
+                                          object-fit: cover;
+                                          border-radius: 12px;
+                                          margin-bottom: 2rem;
+                                      }
+
+                                      .blog-post-content {
+                                          line-height: 1.8;
+                                      }
+
+                                      .blog-post-content p {
+                                          margin-bottom: 1.5rem;
+                                      }
+
+                                      .blog-post-content h2 {
+                                          font-size: 1.8rem;
+                                          font-weight: 600;
+                                          margin: 2rem 0 1rem;
+                                          letter-spacing: -0.5px;
+                                      }
+
+                                      .blog-post-content h3 {
+                                          font-size: 1.4rem;
+                                          font-weight: 600;
+                                          margin: 1.5rem 0 1rem;
+                                          letter-spacing: -0.5px;
+                                      }
+
+                                      .blog-post-content ul,
+                                      .blog-post-content ol {
+                                          margin: 1rem 0 1.5rem 1.5rem;
+                                      }
+
+                                      .blog-post-content li {
+                                          margin-bottom: 0.5rem;
+                                      }
+
+                                      .blog-post-content img {
+                                          max-width: 100%;
+                                          border-radius: 8px;
+                                          margin: 1.5rem 0;
+                                      }
+
+                                      .blog-post-content blockquote {
+                                          border-left: 4px solid var(--apple-highlight);
+                                          padding-left: 1rem;
+                                          margin: 1.5rem 0;
+                                          color: var(--apple-secondary-text);
+                                          font-style: italic;
+                                      }
+
+                                      .back-button {
+                                          display: inline-block;
+                                          margin-bottom: 1.5rem;
+                                          color: var(--apple-highlight);
+                                          text-decoration: none;
+                                          font-weight: 500;
+                                          font-size: 0.9rem;
+                                          cursor: pointer;
+                                      }
+
+                                      footer {
+                                          background-color: var(--apple-darker-bg);
+                                          padding: 3rem 1.5rem;
+                                          border-top: 1px solid var(--apple-border);
+                                      }
+
+                                      .footer-content {
+                                          display: flex;
+                                          justify-content: space-between;
+                                          align-items: center;
+                                          margin-bottom: 1.5rem;
+                                      }
+
+                                      .footer-logo {
+                                          font-size: 1.2rem;
+                                          font-weight: 600;
+                                      }
+
+                                      .footer-nav ul {
+                                          display: flex;
+                                          list-style: none;
+                                      }
+
+                                      .footer-nav ul li {
+                                          margin-left: 1.5rem;
+                                      }
+
+                                      .footer-nav ul li a {
+                                          color: var(--apple-secondary-text);
+                                          text-decoration: none;
+                                          font-size: 0.8rem;
+                                      }
+
+                                      .footer-bottom {
+                                          text-align: center;
+                                          color: var(--apple-secondary-text);
+                                          font-size: 0.8rem;
+                                          padding-top: 1.5rem;
+                                          border-top: 1px solid var(--apple-border);
+                                      }
+
+                                      /* Responsive styles */
+                                      @media (max-width: 768px) {
+                                          .header-content {
+                                              flex-direction: column;
+                                              align-items: flex-start;
+                                          }
+
+                                          nav ul {
+                                              margin-top: 1rem;
+                                          }
+
+                                          nav ul li {
+                                              margin-left: 0;
+                                              margin-right: 1rem;
+                                          }
+
+                                          .section-title {
+                                              font-size: 2rem;
+                                          }
+
+                                          .blog-post-title {
+                                              font-size: 2rem;
+                                          }
+
+                                          .blog-post-img {
+                                              height: 300px;
+                                          }
+
+                                          .footer-content {
+                                              flex-direction: column;
+                                              align-items: flex-start;
+                                          }
+
+                                          .footer-nav ul {
+                                              margin-top: 1rem;
+                                          }
+
+                                          .footer-nav ul li {
+                                              margin-left: 0;
+                                              margin-right: 1rem;
+                                          }
+                                      }
+                                  </style>
+                                  </head> <body> <header> <div class="container"> <div class="header-content"> <div class="logo">iPad mini 7 productivity</div> <nav> <ul> <li><a href="#" onclick="showHome()">Accueil</a></li> <li><a href="#about">À propos</a></li> <li><a href="#contact">Contact</a></li> </ul> </nav> </div> </div> </header>
+                                
+                                  <main class="container">
+                                      <!-- Home Page (Blog listing) -->
+                                      <section id="home-page">
+                                          <h1 class="section-title">Découvrez nos articles tech</h1>
+                                          <p class="section-subtitle">Les dernières nouvelles et analyses sur les produits Apple et la technologie en général.</p>
+
+                                          <div class="blog-grid">
+                                              <!-- iPad Mini 7 Article -->
+                                              <div class="blog-card" onclick="showPost('ipad-mini-7')">
+                                                  <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="iPad Mini 7" class="blog-card-img">
+                                                  <div class="blog-card-content">
+                                                      <h3 class="blog-card-title">L'iPad mini 7 : Un laptop de poche ?</h3>
+                                                      <p class="blog-card-excerpt">Comment ce petit appareil peut révolutionner votre productivité professionnelle.</p>
+                                                      <p class="blog-card-date">9 Mars 2025</p>
+                                                  </div>
+                                              </div>
+
+                                              <!-- Placeholder articles -->
+                                              <div class="blog-card">
+                                                  <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="MacBook Air" class="blog-card-img">
+                                                  <div class="blog-card-content">
+                                                      <h3 class="blog-card-title">Le nouveau MacBook Air avec M3</h3>
+                                                      <p class="blog-card-excerpt">Une analyse détaillée de la dernière génération de MacBook Air.</p>
+                                                      <p class="blog-card-date">5 Mars 2025</p>
+                                                  </div>
+                                              </div>
+
+                                              <div class="blog-card">
+                                                  <img src="https://images.unsplash.com/photo-1603028888637-3774aca3dce2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="iPhone 16" class="blog-card-img">
+                                                  <div class="blog-card-content">
+                                                      <h3 class="blog-card-title">iPhone 16 : Les rumeurs confirmées</h3>
+                                                      <p class="blog-card-excerpt">Tout ce que nous savons sur le prochain flagship d'Apple.</p>
+                                                      <p class="blog-card-date">28 Février 2025</p>
+                                                  </div>
+                                              </div>
+
+                                              <div class="blog-card">
+                                                  <img src="https://images.unsplash.com/photo-1617997455403-41675f84f1bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Apple Watch" class="blog-card-img">
+                                                  <div class="blog-card-content">
+                                                      <h3 class="blog-card-title">Apple Watch et santé mentale</h3>
+                                                      <p class="blog-card-excerpt">Comment les nouvelles fonctionnalités de bien-être peuvent améliorer votre quotidien.</p>
+                                                      <p class="blog-card-date">25 Février 2025</p>
+                                                  </div>
+                                              </div>
+
+                                              <div class="blog-card">
+                                                  <img src="https://images.unsplash.com/photo-1511025998-237396197ade?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="AirPods Pro" class="blog-card-img">
+                                                  <div class="blog-card-content">
+                                                      <h3 class="blog-card-title">Les AirPods Pro 3 se dévoilent</h3>
+                                                      <p class="blog-card-excerpt">Un son immersif inégalé et une autonomie record.</p>
+                                                      <p class="blog-card-date">20 Février 2025</p>
+                                                  </div>
+                                              </div>
+
+                                              <div class="blog-card">
+                                                  <img src="https://images.unsplash.com/photo-1655438615946-b2535861cf28?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="HomePod" class="blog-card-img">
+                                                  <div class="blog-card-content">
+                                                      <h3 class="blog-card-title">HomePod avec écran : Un concurrent pour Echo Show</h3>
+                                                      <p class="blog-card-excerpt">Apple se lance dans les assistants domestiques visuels.</p>
+                                                      <p class="blog-card-date">15 Février 2025</p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </section>
+
+                                      <!-- Blog Post - iPad Mini 7 -->
+                                      <article id="ipad-mini-7" class="blog-post">
+                                          <a href="#" class="back-button" onclick="showHome()">← Retour aux articles</a>
+
+                                          <header class="blog-post-header">
+                                              <h1 class="blog-post-title">L'iPad mini 7 : Un laptop de poche qui révolutionne la productivité</h1>
+                                              <div class="blog-post-meta">
+                                                  <span class="blog-post-date">9 Mars 2025</span>
+                                                  <span class="blog-post-author">Par Thomas Durand</span>
+                                              </div>
+                                          </header>
+
+                                          <img src="https://images.unsplash.com/photo-1604399852419-f67ee7d5f2ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="iPad Mini 7 avec clavier et Apple Pencil" class="blog-post-img">
+
+                                          <div class="blog-post-content">
+                                              <p>L'iPad mini a longtemps été considéré comme un appareil de consommation de contenu plutôt que de création. Mais avec sa septième génération, Apple redéfinit ce que peut accomplir ce petit appareil de 8,3 pouces. Après l'avoir utilisé comme mon principal outil de travail pendant un mois, je suis convaincu que pour de nombreux professionnels, l'iPad mini 7 peut effectivement remplacer un ordinateur portable.</p>
+
+                                              <h2>Un concentré de puissance dans votre poche</h2>
+
+                                              <p>Le nouvel iPad mini 7 est équipé de la puce A17 Pro, la même que celle de l'iPhone 15 Pro, offrant des performances comparables à certains MacBook Air. Ce petit prodige peut exécuter des applications professionnelles exigeantes comme Adobe Photoshop, Procreate, LumaFusion ou même DaVinci Resolve sans sourciller. Les tâches courantes comme la navigation web, le traitement de texte, les e-mails et les visioconférences sont gérées avec une fluidité exemplaire.</p>
+
+                                              <p>La vraie magie opère lorsque l'on considère le rapport entre puissance et portabilité. À seulement 293 grammes, c'est l'appareil le plus léger capable d'exécuter iPadOS, ce qui le rend idéal pour travailler n'importe où.</p>
+
+                                              <h2>L'écosystème qui fait la différence</h2>
+
+                                              <h3>Apple Pencil Pro : précision et polyvalence</h3>
+
+                                              <p>Le nouvel Apple Pencil Pro transforme l'iPad mini 7 en un véritable carnet de notes numérique. La compatibilité avec le Pencil Pro apporte des fonctionnalités avancées comme la sensibilité à la pression, l'inclinaison, et même la fonction "squeeze" qui permet d'accéder rapidement à des outils spécifiques. Pour les designers, illustrateurs ou simplement pour prendre des notes, c'est un outil indispensable qui exploite parfaitement le format compact de l'iPad mini.</p>
+
+                                              <h3>Les claviers : l'élément essentiel</h3>
+
+                                              <p>Si le format de l'iPad mini ne permet pas d'accueillir un Magic Keyboard comme ses grands frères, plusieurs options existent pour transformer l'expérience de frappe :</p>
+
+                                              <ul>
+                                                  <li>Le Logitech Keys-To-Go, ultra fin et léger, se glisse dans n'importe quel sac</li>
+                                                  <li>Les claviers Bluetooth pliables qui offrent une expérience de frappe proche d'un ordinateur portable</li>
+                                                  <li>Pour les plus minimalistes, le clavier virtuel de l'iPad, qui s'avère étonnamment efficace en mode scindé ou flottant</li>
+                                              </ul>
+
+                                              <p>J'ai personnellement opté pour le clavier pliable iClever, qui me permet de taper confortablement pendant des heures tout en préservant la mobilité qui fait l'attrait de l'iPad mini.</p>
+
+                                              <h2>iPadOS 18 : le changement de paradigme</h2>
+
+                                              <p>L'arrivée d'iPadOS 18 marque un tournant décisif dans la transformation de l'iPad en véritable ordinateur. Les améliorations apportées au multitâche, avec une gestion des fenêtres plus intuitive et la possibilité d'avoir jusqu'à quatre applications actives simultanément, changent complètement l'expérience utilisateur.</p>
+
+                                              <p>Le mode Bureau Safari affiche désormais les sites web comme sur un Mac, ce qui élimine une frustration majeure des utilisateurs professionnels. De plus, la compatibilité avec les extensions Safari apporte une nouvelle dimension à la navigation web.</p>
+
+                                              <h3>Intelligence et automatisation</h3>
+
+                                              <p>Les nouvelles fonctionnalités d'IA intégrées à iPadOS 18 incluent :</p>
+
+                                              <ul>
+                                                  <li>Un assistant d'écriture capable de reformuler, résumer ou développer vos textes</li>
+                                                  <li>La génération d'images à partir de descriptions textuelles</li>
+                                                  <li>Des suggestions contextuelles intelligentes qui anticipent vos besoins</li>
+                                              </ul>
+
+                                              <p>Ces outils, couplés à l'application Raccourcis améliorée, permettent d'automatiser des flux de travail complexes et d'accroître considérablement la productivité.</p>
+
+                                              <h2>Les cas d'usage professionnels</h2>
+
+                                              <h3>L'écriture et l'édition</h3>
+
+                                              <p>En tant que rédacteur, j'ai été surpris par l'efficacité de l'iPad mini pour l'écriture d'articles longs. L'écran est suffisamment grand pour afficher confortablement un document, tout en permettant une frappe rapide sur un clavier externe. Des applications comme Ulysses, iA Writer ou même Pages offrent une expérience d'écriture sans distraction, idéale pour rester concentré.</p>
+
+                                              <p>La prise de notes avec l'Apple Pencil Pro est particulièrement agréable. L'application Notes d'Apple reconnaît désormais l'écriture manuscrite avec une précision remarquable, transformant instantanément vos notes manuscrites en texte éditable.</p>
+
+                                              <h3>Le développement logiciel</h3>
+
+                                              <p>Swift Playgrounds a évolué au point de permettre le développement d'applications complètes directement sur iPad. Pour les développeurs web, des applications comme Koder ou Textastic, couplées à Working Copy pour la gestion Git, offrent un environnement de développement surprenamment capable.</p>
+
+                                              <p>Pour les besoins plus avancés, la connexion à distance à des serveurs via applications comme Blink Shell permet d'accéder à des environnements de développement plus complexes.</p>
+
+                                              <h3>Montage photo et vidéo</h3>
+
+                                              <p>LumaFusion sur iPad mini 7 permet un montage vidéo multicouche professionnel avec une fluidité impressionnante. Pour la photo, Lightroom et Darkroom offrent des outils d'édition puissants qui exploitent pleinement l'écran Liquid Retina aux couleurs fidèles.</p>
+
+                                              <h2>Les limites à connaître</h2>
+
+                                              <p>Être honnête implique de reconnaître que l'iPad mini 7 ne peut pas tout faire. Voici les points où il montre ses limites :</p>
+
+                                              <ul>
+                                                  <li>La taille d'écran reste limitée pour certaines tâches nécessitant beaucoup d'espace visuel</li>
+                                                  <li>Certains logiciels professionnels spécifiques ne sont pas disponibles sur iPadOS</li>
+                                                  <li>La gestion des fichiers, bien qu'améliorée, n'est pas aussi flexible que sur macOS</li>
+                                                  <li>Le multitâche demande une période d'adaptation et certaines manipulations sont moins intuitives que sur un ordinateur traditionnel</li>
+                                              </ul>
+
+                                              <h2>Conclusion : Le parfait second appareil devient l'appareil principal</h2>
+
+                                              <p>L'iPad mini 7 représente un équilibre parfait entre puissance et portabilité. Pour de nombreux professionnels dont le travail ne nécessite pas de logiciels spécifiques au desktop, il peut tout à fait remplacer un ordinateur portable pour la majorité des tâches quotidiennes.</p>
+
+                                              <p>Son format unique en fait l'appareil idéal pour ceux qui se déplacent fréquemment, les créatifs qui ont besoin d'un outil de dessin portable, ou simplement pour quiconque cherche à alléger son sac tout en restant productif.</p>
+
+                                              <p>Après un mois d'utilisation intensive, je peux affirmer que l'iPad mini 7 m'a permis de réaliser 90% de mes tâches professionnelles avec un confort surprenant. Pour le reste, une connexion occasionnelle à un Mac via Universal Control suffit amplement.</p>
+
+                                              <p>Ce petit concentré de technologie prouve qu'Apple continue de repousser les limites de ce qu'un appareil de cette taille peut accomplir. L'ère où les tablettes étaient cantonnées à la consommation de contenu est définitivement révolue.</p>
+                                          </div>
+                                      </article>
+                                  </main>
+
+                                  <footer>
+                                      <div class="container">
+                                          <div class="footer-content">
+                                              <div class="footer-logo">iPad mini 7 productivity</div>
+                                              <nav class="footer-nav">
+                                                  <ul>
+                                                      <li><a href="#">Accueil</a></li>
+                                                      <li><a href="#">Articles</a></li>
+                                                      <li><a href="#">À propos</a></li>
+                                                      <li><a href="#">Contact</a></li>
+                                                      <li><a href="#">Mentions légales</a></li>
+                                                  </ul>
+                                              </nav>
+                                          </div>
+                                          <div class="footer-bottom">
+                                              <p>&copy; 2025 iPad mini 7 productivity. Tous droits réservés.</p>
+                                          </div>
+                                      </div>
+                                  </footer>
+
+                                  <script>
+                                      // Function to show the home page
+                                      function showHome() {
+                                          document.getElementById('home-page').style.display = 'block';
+
+                                          // Hide all blog posts
+                                          const blogPosts = document.querySelectorAll('.blog-post');
+                                          blogPosts.forEach(post => {
+                                              post.style.display = 'none';
+                                          });
+
+                                          // Update URL
+                                          history.pushState({page: 'home'}, 'Home', '/');
+
+                                          // Scroll to top
+                                          window.scrollTo(0, 0);
+                                      }
+
+                                      // Function to show a specific blog post
+                                      function showPost(postId) {
+                                          // Hide home page
+                                          document.getElementById('home-page').style.display = 'none';
+
+                                          // Hide all blog posts
+                                          const blogPosts = document.querySelectorAll('.blog-post');
+                                          blogPosts.forEach(post => {
+                                              post.style.display = 'none';
+                                          });
+
+                                          // Show the selected blog post
+                                          document.getElementById(postId).style.display = 'block';
+
+                                          // Update URL
+                                          history.pushState({page: postId}, postId, '/' + postId);
+
+                                          // Scroll to top
+                                          window.scrollTo(0, 0);
+                                      }
+
+                                      // Handle browser back/forward navigation
+                                      window.addEventListener('popstate', function(event) {
+                                          if (event.state && event.state.page) {
+                                              if (event.state.page === 'home') {
+                                                  showHome();
+                                              } else {
+                                                  showPost(event.state.page);
+                                              }
+                                          } else {
+                                              showHome();
+                                          }
+                                      });
+
+                                      // Initialize history state
+                                      history.replaceState({page: 'home'}, 'Home', '/');
+                                  </script>
+                                  </body> </html>
