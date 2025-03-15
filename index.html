@@ -348,7 +348,7 @@
                     <ul>
                         <li><a href="#" onclick="showHome()">Accueil</a></li>
                         <li><a href="#about">À propos</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact" onclick="showContact()">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -362,7 +362,7 @@
             <p class="section-subtitle">Les dernières nouvelles et analyses sur les produits Apple et la technologie en général.</p>
             
             <div class="blog-grid">
-                <!-- iPad Mini 7 Article - Seul article conservé -->
+                <!-- iPad Mini 7 Article -->
                 <div class="blog-card" onclick="showPost('ipad-mini-7')">
                     <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="iPad Mini 7" class="blog-card-img">
                     <div class="blog-card-content">
@@ -371,6 +371,52 @@
                         <p class="blog-card-date">9 Mars 2025</p>
                     </div>
                 </div>
+                
+                <!-- Apple Pencil Pro Article -->
+                <div class="blog-card" onclick="showPost('apple-pencil-pro')">
+                    <img src="https://images.unsplash.com/photo-1588697362969-bf0cd160cb7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Apple Pencil Pro" class="blog-card-img">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Apple Pencil Pro : La révolution créative</h3>
+                        <p class="blog-card-excerpt">Comment le nouveau stylet d'Apple transforme l'expérience iPad pour les professionnels.</p>
+                        <p class="blog-card-date">15 Mars 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" style="display: none;">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="contact-card" style="background-color: var(--apple-card-bg); padding: 2rem; border-radius: 14px;">
+                <p>Vous avez des questions sur l'iPad mini 7 ou souhaitez partager vos expériences ?</p>
+                
+                <form id="contact-form" style="max-width: 600px; margin: 2rem auto;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; color: var(--apple-text);">Nom complet:</label>
+                        <input type="text" id="name" style="width: 100%; padding: 0.8rem; border: 1px solid var(--apple-border); border-radius: 8px; background-color: var(--apple-card-bg); color: var(--apple-text);">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--apple-text);">Email:</label>
+                        <input type="email" id="email" style="width: 100%; padding: 0.8rem; border: 1px solid var(--apple-border); border-radius: 8px; background-color: var(--apple-card-bg); color: var(--apple-text);">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="message" style="display: block; margin-bottom: 0.5rem; color: var(--apple-text);">Message:</label>
+                        <textarea id="message" style="width: 100%; padding: 0.8rem; border: 1px solid var(--apple-border); border-radius: 8px; background-color: var(--apple-card-bg); height: 150px; color: var(--apple-text);"></textarea>
+                    </div>
+                    
+                    <button type="submit" style="background-color: var(--apple-accent); color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 500; transition: opacity 0.3s ease;">
+                        Envoyer le message
+                    </button>
+                </form>
+                
+                <h3 style="margin-top: 2rem; color: var(--apple-text);">Coordonnées</h3>
+                <p style="color: var(--apple-secondary-text);">
+                    📧 contact@ipadmini7.fr<br>
+                    📱 +33 6 12 34 56 78<br>
+                    📍 123 rue Apple, Tech Valley
+                </p>
             </div>
         </section>
         
@@ -473,6 +519,103 @@
                 <p>Ce petit concentré de technologie prouve qu'Apple continue de repousser les limites de ce qu'un appareil de cette taille peut accomplir. L'ère où les tablettes étaient cantonnées à la consommation de contenu est définitivement révolue.</p>
             </div>
         </article>
+        
+        <!-- Blog Post - Apple Pencil Pro -->
+        <article id="apple-pencil-pro" class="blog-post">
+            <a href="#" class="back-button" onclick="showHome()">← Retour aux articles</a>
+            
+            <header class="blog-post-header">
+                <h1 class="blog-post-title">Apple Pencil Pro : Le compagnon créatif ultime pour votre iPad</h1>
+                <div class="blog-post-meta">
+                    <span class="blog-post-date">15 Mars 2025</span>
+                    <span class="blog-post-author">Par Sophie Martin</span>
+                </div>
+            </header>
+            
+            <img src="https://images.unsplash.com/photo-1589739900243-4b52cd9b104e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Apple Pencil Pro avec un iPad" class="blog-post-img">
+            
+            <div class="blog-post-content">
+                <p>Avec le lancement de l'Apple Pencil Pro en 2024, Apple a redéfini ce qu'un stylet numérique peut accomplir. Conçu pour repousser les limites de la créativité et de la productivité, ce nouveau modèle inaugure des fonctionnalités innovantes qui transforment l'expérience utilisateur sur iPad. Après plusieurs semaines d'utilisation intensive, je vous partage pourquoi il représente bien plus qu'une simple mise à jour.</p>
+                
+                <h2>Des innovations qui changent tout</h2>
+                
+                <p>L'Apple Pencil Pro introduit quatre fonctionnalités majeures qui le distinguent clairement de ses prédécesseurs :</p>
+                
+                <h3>Le pincement : une palette d'outils à portée de main</h3>
+                
+                <p>L'innovation la plus remarquable est sans doute la fonction de pincement. En serrant légèrement le corps du Pencil entre vos doigts, une palette d'outils apparaît instantanément à l'écran, vous permettant de changer rapidement d'outil, d'épaisseur de trait ou de couleur sans interrompre votre flux créatif. Cette fonction intuitive élimine les va-et-vient constants entre les menus et votre travail, un gain de temps considérable pour les professionnels.</p>
+                
+                <h3>La rotation du corps : précision et naturel</h3>
+                
+                <p>Grâce à un nouveau gyroscope intégré, l'Apple Pencil Pro détecte la rotation de son corps entre vos doigts. Cette fonctionnalité s'avère particulièrement utile avec les outils de type stylo-plume ou surligneur, où l'angle de la pointe influence l'aspect du trait. Le résultat est une expérience d'écriture et de dessin plus naturelle, similaire aux outils traditionnels. Dans Freeform ou Notes, cela permet de reproduire des techniques artistiques plus complexes qu'auparavant.</p>
+                
+                <h3>Le retour haptique : confirmation tactile</h3>
+                
+                <p>Un moteur haptique sur mesure fournit désormais un retour tactile précis lorsque vous pincez le stylet ou effectuez un double toucher. Cette légère vibration confirme la prise en compte de votre action, renforçant la connexion entre l'utilisateur et l'outil. Ce feedback, discret mais efficace, permet de travailler avec plus de confiance sans avoir à vérifier visuellement si la commande a été reconnue.</p>
+                
+                <h3>Le survol : voir avant de toucher</h3>
+                
+                <p>La fonction de survol permet de visualiser l'emplacement exact où l'Apple Pencil touchera l'écran, avec une ombre virtuelle de l'outil utilisé. Cela permet une précision accrue pour les détails fins, mais aussi pour l'effacement précis d'éléments. Pour les artistes numériques, cette prévisualisation change radicalement l'approche des compositions complexes.</p>
+                
+                <h2>Compatibilité et spécifications techniques</h2>
+                
+                <p>L'Apple Pencil Pro est exclusivement compatible avec les modèles récents d'iPad Pro et d'iPad Air :</p>
+                
+                <ul>
+                    <li>iPad Pro 13 pouces (M4)</li>
+                    <li>iPad Pro 11 pouces (M4)</li>
+                    <li>iPad Air 13 pouces (M2 et M3)</li>
+                    <li>iPad Air 11 pouces (M2 et M3)</li>
+                </ul>
+                
+                <p>D'un point de vue technique, il affiche des dimensions de 166 mm de longueur pour 8,9 mm de diamètre, et pèse seulement 19,15 g. Il utilise la connectivité Bluetooth et nécessite iPadOS 17.5 ou version ultérieure pour fonctionner. L'autonomie reste excellente, et la recharge se fait toujours via fixation magnétique sur le côté de l'iPad.</p>
+                
+                <h2>L'intégration parfaite avec iPadOS 18</h2>
+                
+                <p>L'Apple Pencil Pro prend tout son sens avec les nouvelles fonctionnalités d'iPadOS 18, spécialement optimisées pour ce stylet :</p>
+                
+                <h3>Smart Script : l'écriture manuscrite réinventée</h3>
+                
+                <p>La fonctionnalité Smart Script transforme l'expérience de prise de notes manuscrites. Elle rend l'écriture plus fluide et lisible tout en préservant votre style personnel. Les notes sont non seulement plus belles, mais aussi plus facilement consultables et partageables. La reconnaissance de texte atteint un niveau de précision impressionnant, même avec une écriture rapide ou peu soignée.</p>
+                
+                <h3>Image Playground et Image Wand</h3>
+                
+                <p>L'intégration de l'Apple Pencil Pro avec Image Playground dans iPadOS 18 permet de générer des images créatives directement à partir de la palette d'outils. La fonction Image Wand transforme vos esquisses ou descriptions en illustrations complètes dans trois styles distincts : Animation, Illustration et Sketch. Ces outils d'IA intégrés révolutionnent le processus créatif, permettant de visualiser rapidement des concepts ou d'enrichir vos notes.</p>
+                
+                <h2>L'Apple Pencil Pro au quotidien</h2>
+                
+                <h3>Pour les artistes et designers</h3>
+                
+                <p>Pour les professionnels de la création, l'Apple Pencil Pro offre un niveau de contrôle sans précédent. La rotation du corps et le survol permettent des techniques de dessin numérique presque identiques aux médiums traditionnels. Dans Procreate, les brosses réagissent avec une subtilité remarquable à la pression et à l'angle, tandis que le pincement pour changer d'outil accélère considérablement le flux de travail.</p>
+                
+                <h3>Pour les étudiants et professionnels</h3>
+                
+                <p>La prise de notes devient plus efficace et organisée. Le retour haptique et la précision améliorée réduisent la fatigue lors des longues sessions de travail. L'intégration avec les applications comme GoodNotes ou Notability a été optimisée pour tirer parti des nouvelles fonctionnalités, avec des résultats impressionnants en termes de reconnaissance d'écriture et d'organisation.</p>
+                
+                <h3>Pour les enseignants et présentateurs</h3>
+                
+                <p>L'annotation de documents et la création de contenu éducatif bénéficient grandement de la palette rapide accessible par pincement. La possibilité de passer instantanément d'un style d'annotation à un autre rend les présentations plus dynamiques et engageantes.</p>
+                
+                <h2>Comparaison avec les autres modèles d'Apple Pencil</h2>
+                
+                <p>Comment l'Apple Pencil Pro se positionne-t-il face aux autres modèles ? Voici les principales différences :</p>
+                
+                <ul>
+                    <li>Contrairement à l'Apple Pencil de 2ème génération, il ajoute le pincement, la rotation et le retour haptique</li>
+                    <li>Par rapport à l'Apple Pencil USB-C, plus abordable, il offre toutes les fonctionnalités avancées ainsi que la sensibilité à la pression</li>
+                    <li>Sa fixation magnétique est plus puissante que celle des modèles précédents, garantissant une attache sécurisée même en déplacement</li>
+                    <li>Il est le seul modèle compatible avec l'application Localiser, ce qui permet de le retrouver facilement en cas de perte</li>
+                </ul>
+                
+                <h2>Conclusion : Un investissement pour la productivité créative</h2>
+                
+                <p>L'Apple Pencil Pro représente bien plus qu'un accessoire pour iPad. Il s'agit d'un véritable outil professionnel qui repousse les limites de ce qui est possible sur une tablette. Ses nouvelles fonctionnalités intelligentes offrent une expérience plus naturelle, intuitive et efficace, qu'il s'agisse de dessiner, prendre des notes ou annoter des documents.</p>
+                
+                <p>Pour les utilisateurs de l'iPad comme outil de travail principal, l'Apple Pencil Pro constitue un investissement justifié qui améliore considérablement le potentiel créatif et la productivité. Il renforce la position de l'iPad comme alternative viable à l'ordinateur portable pour de nombreux professionnels.</p>
+                
+                <p>En combinaison avec les nouveaux iPad Pro et iPad Air équipés des puces M4, M3 et M2, ainsi qu'avec iPadOS 18, l'Apple Pencil Pro complète un écosystème extrêmement performant qui continue de redéfinir ce qu'une tablette peut accomplir. C'est tout simplement le meilleur stylet jamais conçu par Apple, et probablement le plus avancé du marché à ce jour.</p>
+            </div>
+        </article>
     </main>
     
     <footer>
@@ -499,6 +642,7 @@
         // Function to show the home page
         function showHome() {
             document.getElementById('home-page').style.display = 'block';
+            document.getElementById('contact').style.display = 'none';
             
             // Hide all blog posts
             const blogPosts = document.querySelectorAll('.blog-post');
@@ -517,6 +661,7 @@
         function showPost(postId) {
             // Hide home page
             document.getElementById('home-page').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
             
             // Hide all blog posts
             const blogPosts = document.querySelectorAll('.blog-post');
@@ -534,11 +679,33 @@
             window.scrollTo(0, 0);
         }
         
+        // Function to show contact section
+        function showContact() {
+            document.getElementById('home-page').style.display = 'none';
+            
+            // Hide all blog posts
+            const blogPosts = document.querySelectorAll('.blog-post');
+            blogPosts.forEach(post => {
+                post.style.display = 'none';
+            });
+            
+            // Show contact section
+            document.getElementById('contact').style.display = 'block';
+            
+            // Update URL
+            history.pushState({page: 'contact'}, 'Contact', '/contact');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
         // Handle browser back/forward navigation
         window.addEventListener('popstate', function(event) {
             if (event.state && event.state.page) {
                 if (event.state.page === 'home') {
                     showHome();
+                } else if (event.state.page === 'contact') {
+                    showContact();
                 } else {
                     showPost(event.state.page);
                 }
@@ -549,6 +716,18 @@
         
         // Initialize history state
         history.replaceState({page: 'home'}, 'Home', '/');
+        
+        // Handle contact form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Merci pour votre message ! Nous vous répondrons sous 48h.');
+                    this.reset();
+                });
+            }
+        });
     </script>
 </body>
 </html>
