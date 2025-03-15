@@ -295,6 +295,102 @@
             border-top: 1px solid var(--apple-border);
         }
         
+        /* Comparison Table for Keyboards Article */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-table th {
+            text-align: left;
+            padding: 12px;
+            background-color: var(--apple-card-bg);
+            color: var(--apple-text);
+            font-weight: 600;
+            border-bottom: 1px solid var(--apple-border);
+        }
+        
+        .comparison-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--apple-border);
+            color: var(--apple-secondary-text);
+        }
+        
+        .comparison-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--apple-text);
+        }
+        
+        .product-card {
+            background-color: var(--apple-card-bg);
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .product-card-header {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--apple-border);
+        }
+        
+        .product-card-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 1.5rem;
+        }
+        
+        .product-card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-card-subtitle {
+            color: var(--apple-secondary-text);
+            font-size: 0.9rem;
+        }
+        
+        .product-card-content {
+            padding: 1.5rem;
+        }
+        
+        .product-card-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card-stars {
+            color: #ff9f0a;
+            margin-right: 0.5rem;
+        }
+        
+        .product-specs {
+            margin: 1.5rem 0;
+        }
+        
+        .product-specs-item {
+            display: flex;
+            margin-bottom: 0.8rem;
+        }
+        
+        .product-specs-label {
+            width: 140px;
+            font-weight: 500;
+            color: var(--apple-secondary-text);
+        }
+        
+        .product-specs-value {
+            flex: 1;
+        }
+        
         /* Responsive styles */
         @media (max-width: 768px) {
             .header-content {
@@ -372,16 +468,26 @@
                     </div>
                 </div>
                 
-                <!-- Apple Pencil Pro Article (homepage card) -->
+                <!-- Apple Pencil Pro Article -->
                 <div class="blog-card" onclick="showPost('apple-pencil-pro')">
-                    <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Apple Pencil Pro" class="blog-card-img">
+                    <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Apple Pencil Pro" class="blog-card-img">
                     <div class="blog-card-content">
                         <h3 class="blog-card-title">Apple Pencil Pro : La révolution créative</h3>
                         <p class="blog-card-excerpt">Comment le nouveau stylet d'Apple transforme l'expérience iPad pour les professionnels.</p>
                         <p class="blog-card-date">15 Mars 2025</p>
                     </div>
                 </div>
-
+                
+                <!-- Claviers iPad Mini 7 Article -->
+                <div class="blog-card" onclick="showPost('claviers-ipad-mini')">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Claviers pour iPad Mini 7" class="blog-card-img">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Les meilleurs claviers pour iPad mini 7</h3>
+                        <p class="blog-card-excerpt">Notre sélection des claviers les plus adaptés pour maximiser votre productivité.</p>
+                        <p class="blog-card-date">18 Mars 2025</p>
+                    </div>
+                </div>
+            </div>
         </section>
         
         <!-- Contact Section -->
@@ -614,6 +720,269 @@
                 <p>Pour les utilisateurs de l'iPad comme outil de travail principal, l'Apple Pencil Pro constitue un investissement justifié qui améliore considérablement le potentiel créatif et la productivité. Il renforce la position de l'iPad comme alternative viable à l'ordinateur portable pour de nombreux professionnels.</p>
                 
                 <p>En combinaison avec les nouveaux iPad Pro et iPad Air équipés des puces M4, M3 et M2, ainsi qu'avec iPadOS 18, l'Apple Pencil Pro complète un écosystème extrêmement performant qui continue de redéfinir ce qu'une tablette peut accomplir. C'est tout simplement le meilleur stylet jamais conçu par Apple, et probablement le plus avancé du marché à ce jour.</p>
+            </div>
+        </article>
+        
+        <!-- Blog Post - Claviers iPad Mini -->
+        <article id="claviers-ipad-mini" class="blog-post">
+            <a href="#" class="back-button" onclick="showHome()">← Retour aux articles</a>
+            
+            <header class="blog-post-header">
+                <h1 class="blog-post-title">Les meilleurs claviers pour iPad mini 7 : Guide complet</h1>
+                <div class="blog-post-meta">
+                    <span class="blog-post-date">18 Mars 2025</span>
+                    <span class="blog-post-author">Par Julie Moreau</span>
+                </div>
+            </header>
+            
+            <img src="https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Clavier compact avec iPad mini" class="blog-post-img">
+            
+            <div class="blog-post-content">
+                <p>L'iPad mini 7 représente le parfait équilibre entre puissance et portabilité. Sa puce A17 Pro lui confère des performances dignes d'un laptop, mais son format ultra-compact peut sembler limitant pour la productivité. La solution ? Un clavier adapté qui transformera votre petit bijou technologique en véritable station de travail mobile. Découvrez notre sélection des meilleurs claviers compatibles avec l'iPad mini 7.</p>
+                
+                <h2>Pourquoi ajouter un clavier à votre iPad mini 7 ?</h2>
+                
+                <p>Avant de plonger dans les différentes options, prenons un moment pour comprendre les avantages d'un clavier externe pour votre iPad mini 7 :</p>
+                
+                <ul>
+                    <li>Vitesse de frappe considérablement améliorée par rapport au clavier virtuel</li>
+                    <li>Écran entièrement disponible pour votre contenu (aucune partie n'est occupée par le clavier)</li>
+                    <li>Position de travail plus ergonomique et confortable</li>
+                    <li>Raccourcis clavier pour une navigation et une édition plus efficaces</li>
+                    <li>Transforme votre iPad en véritable outil de productivité comparable à un ordinateur portable</li>
+                </ul>
+                
+                <h2>Notre top 3 des claviers pour iPad mini 7</h2>
+                
+                <h3>1. Logitech Keys-To-Go</h3>
+                
+                <div class="product-card">
+                    <div class="product-card-header">
+                        <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Logitech Keys-To-Go" class="product-card-img">
+                        <div>
+                            <h4 class="product-card-title">Logitech Keys-To-Go</h4>
+                            <p class="product-card-subtitle">Prix : environ 70€</p>
+                        </div>
+                    </div>
+                    <div class="product-card-content">
+                        <div class="product-card-rating">
+                            <span class="product-card-stars">★★★★☆</span>
+                            <span>4.2/5 - Notre choix optimal</span>
+                        </div>
+                        
+                        <p>Le Logitech Keys-To-Go est le compagnon idéal de l'iPad mini 7. D'une finesse remarquable (seulement 6 mm d'épaisseur) et extrêmement léger (180g), il maintient la philosophie de portabilité qui fait le charme de l'iPad mini. Sa surface traitée FabricSkin le rend résistant aux éclaboussures, parfait pour travailler au café.</p>
+                        
+                        <div class="product-specs">
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Dimensions :</span>
+                                <span class="product-specs-value">24 cm x 13,7 cm x 0,6 cm</span>
+                            </div>
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Poids :</span>
+                                <span class="product-specs-value">180 grammes</span>
+                            </div>
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Autonomie :</span>
+                                <span class="product-specs-value">3 mois (utilisation moyenne)</span>
+                            </div>
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Connexion :</span>
+                                <span class="product-specs-value">Bluetooth</span>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;">Points forts</h4>
+                        <ul>
+                            <li>Design ultra-fin qui complète parfaitement l'iPad mini</li>
+                            <li>Résistant aux éclaboussures</li>
+                            <li>Frappe silencieuse idéale pour les bibliothèques ou espaces partagés</li>
+                            <li>Rangée complète de touches de raccourcis iOS</li>
+                            <li>Batterie rechargeable via USB-C</li>
+                        </ul>
+                        
+                        <h4 style="margin-top: 1rem; font-size: 1.1rem; font-weight: 600;">Points faibles</h4>
+                        <ul>
+                            <li>Course des touches assez courte (peut déplaire aux dactylographes habituels)</li>
+                            <li>Pas de rétroéclairage</li>
+                            <li>Ne fait pas office de protection pour l'iPad</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>2. Logitech Pebble Keys 2 K380s</h3>
+                
+                <div class="product-card">
+                    <div class="product-card-header">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Logitech Pebble Keys 2 K380s" class="product-card-img">
+                        <div>
+                            <h4 class="product-card-title">Logitech Pebble Keys 2 K380s</h4>
+                            <p class="product-card-subtitle">Prix : environ 40€</p>
+                        </div>
+                    </div>
+                    <div class="product-card-content">
+                        <div class="product-card-rating">
+                            <span class="product-card-stars">★★★★☆</span>
+                            <span>4.5/5 - Meilleur rapport qualité-prix</span>
+                        </div>
+                        
+                        <p>Le K380s est légèrement plus grand que le Keys-To-Go, mais offre une frappe plus confortable grâce à ses touches rondes à la course plus prononcée. Son principal atout est sa capacité à se connecter simultanément à trois appareils différents, vous permettant de basculer instantanément entre votre iPad, votre iPhone et votre Mac.</p>
+                        
+                        <div class="product-specs">
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Dimensions :</span>
+                                <span class="product-specs-value">28,5 cm x 12,4 cm x 1,6 cm</span>
+                            </div>
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Poids :</span>
+                                <span class="product-specs-value">420 grammes</span>
+                            </div>
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Autonomie :</span>
+                                <span class="product-specs-value">24 mois (2 piles AAA)</span>
+                            </div>
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Connexion :</span>
+                                <span class="product-specs-value">Bluetooth multi-appareils (3)</span>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;">Points forts</h4>
+                        <ul>
+                            <li>Excellente ergonomie des touches</li>
+                            <li>Connexion à trois appareils avec commutation facile</li>
+                            <li>Autonomie exceptionnelle</li>
+                            <li>Excellent rapport qualité-prix</li>
+                            <li>Disponible en plusieurs coloris</li>
+                        </ul>
+                        
+                        <h4 style="margin-top: 1rem; font-size: 1.1rem; font-weight: 600;">Points faibles</h4>
+                        <ul>
+                            <li>Légèrement plus encombrant que le Keys-To-Go</li>
+                            <li>Pas de rétroéclairage</li>
+                            <li>Utilise des piles remplaçables plutôt qu'une batterie rechargeable</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>3. Claviers Bluetooth Compacts Génériques</h3>
+                
+                <div class="product-card">
+                    <div class="product-card-header">
+                        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Claviers Bluetooth Compacts Génériques" class="product-card-img">
+                        <div>
+                            <h4 class="product-card-title">Claviers Bluetooth Compacts Génériques</h4>
+                            <p class="product-card-subtitle">Prix : 20-50€</p>
+                        </div>
+                    </div>
+                    <div class="product-card-content">
+                        <div class="product-card-rating">
+                            <span class="product-card-stars">★★★☆☆</span>
+                            <span>3.7/5 - Option économique</span>
+                        </div>
+                        
+                        <p>Le marché regorge de claviers Bluetooth compacts de différentes marques qui peuvent parfaitement convenir à une utilisation occasionnelle avec l'iPad mini 7. Ces options plus économiques offrent souvent un bon compromis pour les utilisateurs qui ne souhaitent pas investir dans un modèle premium.</p>
+                        
+                        <div class="product-specs">
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Dimensions :</span>
+                                <span class="product-specs-value">Variables selon les modèles</span>
+                            </div>
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Poids :</span>
+                                <span class="product-specs-value">200-500 grammes typiquement</span>
+                            </div>
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Autonomie :</span>
+                                <span class="product-specs-value">Variable (généralement 1-3 mois)</span>
+                            </div>
+                            <div class="product-specs-item">
+                                <span class="product-specs-label">Connexion :</span>
+                                <span class="product-specs-value">Bluetooth</span>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600;">Points forts</h4>
+                        <ul>
+                            <li>Prix très abordable</li>
+                            <li>Grande variété de designs et formats disponibles</li>
+                            <li>Certains modèles incluent un support pour l'iPad</li>
+                            <li>Options avec rétroéclairage disponibles dans cette gamme de prix</li>
+                        </ul>
+                        
+                        <h4 style="margin-top: 1rem; font-size: 1.1rem; font-weight: 600;">Points faibles</h4>
+                        <ul>
+                            <li>Qualité de fabrication variable</li>
+                            <li>Durabilité généralement inférieure aux modèles premium</li>
+                            <li>Support client souvent limité</li>
+                            <li>Touches spécifiques iOS parfois absentes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Tableau comparatif</h2>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Modèle</th>
+                            <th>Portabilité</th>
+                            <th>Confort de frappe</th>
+                            <th>Autonomie</th>
+                            <th>Multi-appareils</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Logitech Keys-To-Go</td>
+                            <td>★★★★★</td>
+                            <td>★★★☆☆</td>
+                            <td>★★★★☆</td>
+                            <td>Non</td>
+                            <td>~70€</td>
+                        </tr>
+                        <tr>
+                            <td>Logitech Pebble Keys 2 K380s</td>
+                            <td>★★★★☆</td>
+                            <td>★★★★☆</td>
+                            <td>★★★★★</td>
+                            <td>Oui (3)</td>
+                            <td>~40€</td>
+                        </tr>
+                        <tr>
+                            <td>Claviers génériques</td>
+                            <td>★★★☆☆</td>
+                            <td>★★★☆☆</td>
+                            <td>★★★☆☆</td>
+                            <td>Variable</td>
+                            <td>20-50€</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2>Conseils pour choisir le clavier idéal</h2>
+                
+                <p>Voici quelques critères à considérer avant de faire votre choix :</p>
+                
+                <h3>La portabilité avant tout</h3>
+                
+                <p>L'un des principaux avantages de l'iPad mini 7 est sa taille compacte. Choisissez un clavier qui préserve cette portabilité. Des modèles comme le Keys-To-Go excellent dans ce domaine grâce à leur profil ultra-fin.</p>
+                
+                <h3>L'ergonomie selon votre usage</h3>
+                
+                <p>Si vous prévoyez de taper de longs textes régulièrement, privilégiez un clavier offrant une bonne course des touches et un espacement confortable comme le K380s. Pour une utilisation plus occasionnelle, un modèle plus compact comme le Keys-To-Go peut suffire.</p>
+                
+                <h3>La connexion multi-appareils</h3>
+                
+                <p>Si vous travaillez avec plusieurs appareils simultanément, un clavier pouvant se connecter à plusieurs appareils en même temps représente un avantage considérable, vous évitant de constamment jumeler et déjumeler votre clavier.</p>
+                
+                <h2>Notre recommandation</h2>
+                
+                <p>Pour la plupart des utilisateurs d'iPad mini 7, le Logitech Keys-To-Go représente le meilleur compromis. Sa finesse et sa légèreté s'accordent parfaitement avec la philosophie de l'iPad mini, tout en offrant une expérience de frappe satisfaisante et des fonctionnalités spécifiques pour iOS.</p>
+                
+                <p>Si vous êtes particulièrement sensible au confort de frappe ou utilisez plusieurs appareils, le Logitech Pebble Keys 2 K380s est une excellente alternative. Son rapport qualité-prix remarquable et son autonomie exceptionnelle en font un choix judicieux pour de nombreux utilisateurs.</p>
+                
+                <p>L'ajout d'un clavier externe à votre iPad mini 7 transformera votre expérience utilisateur, vous permettant d'exploiter pleinement la puissance de ce petit concentré de technologie pour la productivité professionnelle.</p>
             </div>
         </article>
     </main>
